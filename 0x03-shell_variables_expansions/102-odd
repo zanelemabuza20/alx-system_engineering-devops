@@ -1,9 +1,2 @@
 #!/bin/bash
-
-count=0
-while IFS='' read -r line || [[ -n "$line" ]]; do
-    if [[ $((count % 2)) -eq 0 ]]; then
-        echo "$line"
-    fi
-    count=$((count + 1))
-done < "${1:-/dev/stdin}"
+perl -lne 'print if $.%2==1'

@@ -4,4 +4,3 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     encoded_line=$(echo "$line" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
     echo "$encoded_line"
 done < "${1:-/dev/stdin}"
-
